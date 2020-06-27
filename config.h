@@ -26,7 +26,7 @@ static int borderpx = 2;
 static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = "scroll";
+char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
@@ -244,12 +244,22 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ MODKEY,               XK_k,           ttysend,        {.s = "\031"} },
-	{ MODKEY,               XK_j,           ttysend,        {.s = "\005"} },
-	{ MODKEY,               XK_Up,          ttysend,        {.s = "\031"} },
-	{ MODKEY,               XK_Down,        ttysend,        {.s = "\005"} },
-	{ MODKEY,               XK_u,           ttysend,        {.s = "\033[5;2~"} },
-	{ MODKEY,               XK_d,           ttysend,        {.s = "\033[6;2~"} },
+	/* { MODKEY,               XK_k,           ttysend,        {.s = "\031"} }, */
+	/* { MODKEY,               XK_j,           ttysend,        {.s = "\005"} }, */
+	/* { MODKEY,               XK_Up,          ttysend,        {.s = "\031"} }, */
+	/* { MODKEY,               XK_Down,        ttysend,        {.s = "\005"} }, */
+	/* { MODKEY,               XK_u,           ttysend,        {.s = "\033[5;2~"} }, */
+	/* { MODKEY,               XK_d,           ttysend,        {.s = "\033[6;2~"} }, */
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
+	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
+	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
+	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
+	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
