@@ -161,6 +161,11 @@ static unsigned int defaultrcs = 0;
 static unsigned int cursorshape = 2;
 
 /*
+ * Command used to query unicode glyphs.
+ */
+char *iso14755_cmd = "dmenu -w \"$WINDOWID\" -p codepoint: </dev/null";
+
+/*
  * Default columns and rows numbers
  */
 
@@ -290,6 +295,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
+	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 };
 
 /*
