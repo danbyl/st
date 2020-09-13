@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:size=12:antialias=true:autohint=true"; /* needs to precede Hack in font2 for ligatures to show */
-static char *font2[] = { "Hack:size=12:antialias=true:autohint=true",
+static char *font = "Hack:size=12:antialias=true:autohint=true";
+static char *font2[] = { "Hack:size=12:antialias=true:autohint=true", /* needs to be the same as *font for neofetch */
+                         "Hack Nerd Font Mono:size=12:antialias=true:autohint=true",
                          "Font Awesome:size=12:antialias=true:autohint=true",
                          "JoyPixels:size=12:antialias=true:autohint=true",
                          "Noto Color Emoji:size=12:antialias=true:autohint=true",
