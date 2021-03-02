@@ -1241,6 +1241,7 @@ xinit(int cols, int rows)
 	} else {
 		XGetWindowAttributes(xw.dpy, parent, &attr);
 		xw.depth = attr.depth;
+		setenv("XEMBED", opt_embed, 1);
 	}
 
 	XMatchVisualInfo(xw.dpy, xw.scr, xw.depth, TrueColor, &vis);
