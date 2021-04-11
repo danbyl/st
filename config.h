@@ -9,10 +9,7 @@ static char *font = "monospace:size=11:antialias=true:autohint=true";
 static char *font2[] = {
 	"Hack:size=11:antialias=true:autohint=true", /* needs to be the same as *font for neofetch */
 	"Hack Nerd Font Mono:size=11:antialias=true:autohint=true",
-	"Font Awesome:size=11:antialias=true:autohint=true",
-	"JoyPixels:size=11:antialias=true:autohint=true",
 	"Noto Color Emoji:size=11:antialias=true:autohint=true",
-	"Symbola:size=11:antialias=true:autohint=true",
 };
 
 static int borderpx = 2;
